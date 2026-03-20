@@ -8,19 +8,19 @@ Install this on any RHOAI cluster to make the 3.3 images available alongside wha
 
 **11 workbench images** (ImageStreams) — appear in the RHOAI dashboard under *Workbenches* prefixed with `[3.3]`:
 
-| Image | Accelerator |
-|-------|-------------|
-| Jupyter \| Minimal \| CPU \| Python 3.12 | CPU |
-| Jupyter \| Data Science \| CPU \| Python 3.12 | CPU |
-| Jupyter \| TrustyAI \| CPU \| Python 3.12 | CPU |
-| Code Server \| Data Science \| CPU \| Python 3.12 | CPU |
-| Jupyter \| Minimal \| CUDA \| Python 3.12 | NVIDIA |
-| Jupyter \| PyTorch \| CUDA \| Python 3.12 | NVIDIA |
-| Jupyter \| TensorFlow \| CUDA \| Python 3.12 | NVIDIA |
-| Jupyter \| PyTorch LLM Compressor \| CUDA \| Python 3.12 | NVIDIA |
-| Jupyter \| Minimal \| ROCm \| Python 3.12 | AMD |
-| Jupyter \| PyTorch \| ROCm \| Python 3.12 | AMD |
-| Jupyter \| TensorFlow \| ROCm \| Python 3.12 | AMD |
+| Image | Accelerator | Versions |
+|-------|-------------|----------|
+| Jupyter \| Minimal \| CPU \| Python 3.12 | CPU | 1.2, 2023.1, 2023.2, 2024.1, 2024.2, 2025.1, 2025.2 |
+| Jupyter \| Data Science \| CPU \| Python 3.12 | CPU | 1.2, 2023.1, 2023.2, 2024.1, 2024.2, 2025.1, 2025.2 |
+| Jupyter \| TrustyAI \| CPU \| Python 3.12 | CPU | 2023.1, 2023.2, 2024.1, 2024.2, 2025.1, 2025.2 |
+| Code Server \| Data Science \| CPU \| Python 3.12 | CPU | 2023.2, 2024.1, 2024.2, 2025.1, 2025.2 |
+| Jupyter \| Minimal \| CUDA \| Python 3.12 | NVIDIA | 1.2, 2023.1, 2023.2, 2024.1, 2024.2, 2025.1, 2025.2 |
+| Jupyter \| PyTorch \| CUDA \| Python 3.12 | NVIDIA | 1.2, 2023.1, 2023.2, 2024.1, 2024.2, 2025.1, 2025.2 |
+| Jupyter \| TensorFlow \| CUDA \| Python 3.12 | NVIDIA | 1.2, 2023.1, 2023.2, 2024.1, 2024.2, 2025.1, 2025.2 |
+| Jupyter \| PyTorch LLM Compressor \| CUDA \| Python 3.12 | NVIDIA | 2025.2 |
+| Jupyter \| Minimal \| ROCm \| Python 3.12 | AMD | 2024.2, 2025.1, 2025.2 |
+| Jupyter \| PyTorch \| ROCm \| Python 3.12 | AMD | 2024.2, 2025.1, 2025.2 |
+| Jupyter \| TensorFlow \| ROCm \| Python 3.12 | AMD | 2024.2, 2025.1, 2025.2 |
 
 **7 pipeline runtime images** (ImageStreams) — available in the pipeline editor prefixed with `[3.3]`:
 
