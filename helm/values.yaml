@@ -23,6 +23,19 @@ workbenchImages:
   tensorflow:
     enabled: true
 
-# Runtime images (ClusterServingRuntime CRDs) - cluster-scoped
-# To be populated after cluster discovery
-runtimeImages: {}
+# Pipeline runtime images (ImageStream CRDs) - namespace: redhat-ods-applications
+runtimeImages:
+  datascience:
+    enabled: true
+  minimal:
+    enabled: true
+  pytorch:
+    enabled: true
+  pytorchLlmcompressor:
+    enabled: true
+  rocmPytorch:
+    enabled: true
+  rocmTensorflow:
+    enabled: true
+  tensorflow:
+    enabled: true

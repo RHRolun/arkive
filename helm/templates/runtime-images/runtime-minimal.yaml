@@ -1,0 +1,38 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    opendatahub.io/runtime-image-desc: Minimal runtime image for Elyra, enabling pipeline
+      execution from Workbenches with minimal dependency set to start experimenting
+      with, for various pipeline nodes.
+    opendatahub.io/runtime-image-name: '[3.3] Runtime | Minimal | CPU | Python 3.12'
+    opendatahub.io/runtime-image-url: https://github.com//opendatahub-io/notebooks/tree/main/runtimes
+    platform.opendatahub.io/type: OpenShift AI Self-Managed
+    platform.opendatahub.io/version: 3.4.0-ea.2
+  labels:
+    app.kubernetes.io/created-by: byon
+    app.kubernetes.io/part-of: workbenches
+    app.opendatahub.io/workbenches: 'true'
+    component.opendatahub.io/name: notebooks
+    opendatahub.io/component: 'true'
+    opendatahub.io/dashboard: 'true'
+    opendatahub.io/runtime-image: 'true'
+    platform.opendatahub.io/part-of: workbenches
+  name: runtime-minimal-3.3
+  namespace: redhat-ods-applications
+spec:
+  lookupPolicy:
+    local: true
+  tags:
+  - annotations:
+      opendatahub.io/runtime-image-metadata: "[\n  {\n    \"display_name\": \"Runtime\
+        \ | Minimal | CPU | Python 3.12\",\n    \"metadata\": {\n      \"tags\": [\n\
+        \        \"minimal\"\n      ],\n      \"display_name\": \"Runtime | Minimal\
+        \ | CPU | Python 3.12\",\n      \"pull_policy\": \"IfNotPresent\"\n    },\n\
+        \    \"schema_name\": \"runtime-image\"\n  }\n]\n"
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/rhoai/odh-pipeline-runtime-minimal-cpu-py312-rhel9@sha256:464effb3a01c75521632faa3f7fa01750a264d56f1cb781c9f35192cb42643e6
+    name: minimal
+    referencePolicy:
+      type: Source
