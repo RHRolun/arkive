@@ -1,0 +1,119 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    opendatahub.io/notebook-image-desc: Jupyter notebook image with GPU support and
+      minimal dependency set to start experimenting with Jupyter environment.
+    opendatahub.io/notebook-image-name: '[3.3] Jupyter | Minimal | CUDA | Python 3.12'
+    opendatahub.io/notebook-image-order: '3'
+    opendatahub.io/notebook-image-url: https://github.com/red-hat-data-services/notebooks/tree/main/jupyter/minimal
+    opendatahub.io/recommended-accelerators: '["nvidia.com/gpu"]'
+    platform.opendatahub.io/type: OpenShift AI Self-Managed
+    platform.opendatahub.io/version: 3.3.0
+  labels:
+    app.kubernetes.io/created-by: byon
+    app.kubernetes.io/part-of: workbenches
+    app.opendatahub.io/workbenches: 'true'
+    component.opendatahub.io/name: notebooks
+    opendatahub.io/component: 'true'
+    opendatahub.io/dashboard: 'true'
+    opendatahub.io/notebook-image: 'true'
+    platform.opendatahub.io/part-of: workbenches
+  name: minimal-gpu-3.3
+  namespace: redhat-ods-applications
+spec:
+  lookupPolicy:
+    local: true
+  tags:
+  - annotations:
+      opendatahub.io/image-tag-outdated: 'true'
+      opendatahub.io/notebook-build-commit: 3e71410
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\":\"JupyterLab\"\
+        ,\"version\":\"3.2\"},\n  {\"name\":\"Notebook\",\"version\":\"6.4\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\":\"CUDA\",\"version\":\"11.4\"\
+        },\n  {\"name\":\"Python\",\"version\":\"v3.8\"}\n]\n"
+    from:
+      kind: DockerImage
+      name: quay.io/modh/cuda-notebooks@sha256:00c53599f5085beedd0debb062652a1856b19921ccf59bd76134471d24c3fa7d
+    name: '1.2'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/image-tag-outdated: 'true'
+      opendatahub.io/notebook-build-commit: 07015ec
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\":\"JupyterLab\"\
+        ,\"version\":\"3.5\"},\n  {\"name\":\"Notebook\",\"version\":\"6.5\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\":\"CUDA\",\"version\":\"11.8\"\
+        },\n  {\"name\":\"Python\",\"version\":\"v3.9\"}\n]\n"
+    from:
+      kind: DockerImage
+      name: quay.io/modh/cuda-notebooks@sha256:f6cdc993b4d493ffaec876abb724ce44b3c6fc37560af974072b346e45ac1a3b
+    name: '2023.1'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/image-tag-outdated: 'true'
+      opendatahub.io/notebook-build-commit: 76a016f
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\":\"JupyterLab\"\
+        ,\"version\":\"3.6\"},\n  {\"name\":\"Notebook\",\"version\":\"6.5\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\":\"CUDA\",\"version\":\"11.8\"\
+        },\n  {\"name\":\"Python\",\"version\":\"v3.9\"}\n]\n"
+    from:
+      kind: DockerImage
+      name: quay.io/modh/cuda-notebooks@sha256:a484d344f6feab25e025ea75575d837f5725f819b50a6e3476cef1f9925c07a5
+    name: '2023.2'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/image-tag-outdated: 'true'
+      opendatahub.io/notebook-build-commit: b42b86c
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        , \"version\": \"3.6\"},\n  {\"name\": \"Notebook\",\"version\": \"6.5\"}\n\
+        ]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"CUDA\", \"version\": \"\
+        12.1\"},\n  {\"name\": \"Python\", \"version\": \"v3.9\"}\n]\n"
+    from:
+      kind: DockerImage
+      name: quay.io/modh/cuda-notebooks@sha256:81484fafe7012792ecdda28fef89287219c21b99c4e79a504aff0b265d94b429
+    name: '2024.1'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/image-tag-outdated: 'true'
+      opendatahub.io/notebook-build-commit: be38cca
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        , \"version\": \"4.2\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"CUDA\", \"version\": \"\
+        12.4\"},\n  {\"name\": \"Python\", \"version\": \"v3.11\"}\n]\n"
+    from:
+      kind: DockerImage
+      name: quay.io/modh/cuda-notebooks@sha256:55598c7de919afc6390cf59595549dc4554102481617ec42beaa3c47ef26d5e4
+    name: '2024.2'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/notebook-build-commit: 8a0af91
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        , \"version\": \"4.4\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"CUDA\", \"version\": \"\
+        12.6\"},\n  {\"name\": \"Python\", \"version\": \"v3.11\"}\n]\n"
+      opendatahub.io/workbench-image-recommended: 'false'
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/rhoai/odh-workbench-jupyter-minimal-cuda-py311-rhel9@sha256:481c5f3749efb85300ed6076a5b05ca5be1ceda17518791db3a67c7b1fa24941
+    name: '2025.1'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/notebook-build-commit: d3137ca
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        , \"version\": \"4.4\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"CUDA\", \"version\": \"\
+        12.8\"},\n  {\"name\": \"Python\", \"version\": \"v3.12\"}\n]\n"
+      opendatahub.io/workbench-image-recommended: 'true'
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/rhoai/odh-workbench-jupyter-minimal-cuda-py312-rhel9@sha256:bd15088088dd6258da62e6658fa66790036acc6bb9af43bdcc240b389ef52f47
+    name: '2025.2'
+    referencePolicy:
+      type: Source

@@ -1,0 +1,171 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    opendatahub.io/notebook-image-desc: Jupyter TrustyAI notebook integrates the TrustyAI
+      Explainability Toolkit on Jupyter environment.
+    opendatahub.io/notebook-image-name: '[3.3] Jupyter | TrustyAI | CPU | Python 3.12'
+    opendatahub.io/notebook-image-order: '16'
+    opendatahub.io/notebook-image-url: https://github.com/red-hat-data-services/notebooks/tree/main/jupyter/trustyai
+    platform.opendatahub.io/type: OpenShift AI Self-Managed
+    platform.opendatahub.io/version: 3.3.0
+  labels:
+    app.kubernetes.io/created-by: byon
+    app.kubernetes.io/part-of: workbenches
+    app.opendatahub.io/workbenches: 'true'
+    component.opendatahub.io/name: notebooks
+    opendatahub.io/component: 'true'
+    opendatahub.io/dashboard: 'true'
+    opendatahub.io/notebook-image: 'true'
+    platform.opendatahub.io/part-of: workbenches
+  name: odh-trustyai-notebook-3.3
+  namespace: redhat-ods-applications
+spec:
+  lookupPolicy:
+    local: true
+  tags:
+  - annotations:
+      opendatahub.io/image-tag-outdated: 'true'
+      opendatahub.io/notebook-build-commit: 07015ec
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\":\"TrustyAI\",\"\
+        version\":\"0.3\"},\n  {\"name\":\"Boto3\",\"version\":\"1.26\"},\n  {\"name\"\
+        :\"Kafka-Python\",\"version\":\"2.0\"},\n  {\"name\":\"Kfp-tekton\",\"version\"\
+        :\"1.5\"},\n  {\"name\":\"Matplotlib\",\"version\":\"3.6\"},\n  {\"name\"\
+        :\"Numpy\",\"version\":\"1.24\"},\n  {\"name\":\"Pandas\",\"version\":\"1.5\"\
+        },\n  {\"name\":\"Scikit-learn\",\"version\":\"1.2\"},\n  {\"name\":\"Scipy\"\
+        ,\"version\":\"1.10\"},\n  {\"name\":\"Elyra\",\"version\":\"3.15\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\":\"Python\",\"version\":\"\
+        v3.9\"}\n]\n"
+    from:
+      kind: DockerImage
+      name: quay.io/modh/odh-trustyai-notebook@sha256:8c5e653f6bc6a2050565cf92f397991fbec952dc05cdfea74b65b8fd3047c9d4
+    name: '2023.1'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/image-tag-outdated: 'true'
+      opendatahub.io/notebook-build-commit: 76a016f
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\":\"TrustyAI\",\"\
+        version\":\"0.6\"},\n  {\"name\":\"Boto3\",\"version\":\"1.28\"},\n  {\"name\"\
+        :\"Kafka-Python\",\"version\":\"2.0\"},\n  {\"name\":\"Kfp-tekton\",\"version\"\
+        :\"1.5\"},\n  {\"name\":\"Matplotlib\",\"version\":\"3.6\"},\n  {\"name\"\
+        :\"Numpy\",\"version\":\"1.24\"},\n  {\"name\":\"Pandas\",\"version\":\"1.5\"\
+        },\n  {\"name\":\"Scikit-learn\",\"version\":\"1.3\"},\n  {\"name\":\"Scipy\"\
+        ,\"version\":\"1.11\"},\n  {\"name\":\"Elyra\",\"version\":\"3.15\"},\n  {\"\
+        name\":\"PyMongo\",\"version\":\"4.5\"},\n  {\"name\":\"Pyodbc\",\"version\"\
+        :\"4.0\"},\n  {\"name\":\"Codeflare-SDK\",\"version\":\"0.14\"},\n  {\"name\"\
+        :\"Sklearn-onnx\",\"version\":\"1.15\"},\n  {\"name\":\"Psycopg\",\"version\"\
+        :\"3.1\"},\n  {\"name\":\"MySQL Connector/Python\",\"version\":\"8.0\"}\n\
+        ]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\":\"Python\",\"version\":\"\
+        v3.9\"}\n]\n"
+    from:
+      kind: DockerImage
+      name: quay.io/modh/odh-trustyai-notebook@sha256:fe883d8513c5d133af1ee3f7bb0b7b37d3bada8ae73fc7209052591d4be681c0
+    name: '2023.2'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/image-tag-outdated: 'true'
+      opendatahub.io/notebook-build-commit: b42b86c
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"TrustyAI\",\
+        \ \"version\": \"0.6\"},\n  {\"name\": \"Boto3\", \"version\": \"1.34\"},\n\
+        \  {\"name\": \"Kafka-Python\", \"version\": \"2.0\"},\n  {\"name\": \"Kfp\"\
+        , \"version\": \"2.11\"},\n  {\"name\": \"Matplotlib\", \"version\": \"3.10\"\
+        },\n  {\"name\": \"Numpy\", \"version\": \"1.26\"},\n  {\"name\": \"Pandas\"\
+        , \"version\": \"1.5\"},\n  {\"name\": \"Scikit-learn\", \"version\": \"1.4\"\
+        },\n  {\"name\": \"Scipy\", \"version\": \"1.12\"},\n  {\"name\": \"Odh-Elyra\"\
+        , \"version\": \"3.16\"},\n  {\"name\": \"PyMongo\", \"version\": \"4.6\"\
+        },\n  {\"name\": \"Pyodbc\", \"version\": \"5.1\"},\n  {\"name\": \"Codeflare-SDK\"\
+        , \"version\": \"0.21\"},\n  {\"name\": \"Sklearn-onnx\", \"version\": \"\
+        1.16\"},\n  {\"name\": \"Psycopg\", \"version\": \"3.1\"},\n  {\"name\": \"\
+        MySQL Connector/Python\", \"version\": \"8.3\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"Python\", \"version\":\
+        \ \"v3.9\"}\n]\n"
+    from:
+      kind: DockerImage
+      name: quay.io/modh/odh-trustyai-notebook@sha256:70fe49cee6d5a231ddea7f94d7e21aefd3d8da71b69321f51c406a92173d3334
+    name: '2024.1'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/image-tag-outdated: 'true'
+      opendatahub.io/notebook-build-commit: be38cca
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        ,\"version\": \"4.2\"},\n  {\"name\": \"TrustyAI\", \"version\": \"0.6\"},\n\
+        \  {\"name\": \"Transformers\", \"version\": \"4.38\"},\n  {\"name\": \"Datasets\"\
+        , \"version\": \"2.21\"},\n  {\"name\": \"Accelerate\", \"version\": \"0.34\"\
+        },\n  {\"name\": \"Torch\", \"version\": \"2.2\"},\n  {\"name\": \"Boto3\"\
+        , \"version\": \"1.35\"},\n  {\"name\": \"Kafka-Python-ng\", \"version\":\
+        \ \"2.2\"},\n  {\"name\": \"Kfp\", \"version\": \"2.9\"},\n  {\"name\": \"\
+        Matplotlib\", \"version\": \"3.10\"},\n  {\"name\": \"Numpy\", \"version\"\
+        : \"1.26\"},\n  {\"name\": \"Pandas\", \"version\": \"1.5\"},\n  {\"name\"\
+        : \"Scikit-learn\", \"version\": \"1.2\"},\n  {\"name\": \"Scipy\", \"version\"\
+        : \"1.14\"},\n  {\"name\": \"Odh-Elyra\", \"version\": \"4.2\"},\n  {\"name\"\
+        : \"PyMongo\", \"version\": \"4.8\"},\n  {\"name\": \"Pyodbc\", \"version\"\
+        : \"5.1\"},\n  {\"name\": \"Codeflare-SDK\", \"version\": \"0.26\"},\n  {\"\
+        name\": \"Sklearn-onnx\", \"version\": \"1.17\"},\n  {\"name\": \"Psycopg\"\
+        , \"version\": \"3.2\"},\n  {\"name\": \"MySQL Connector/Python\", \"version\"\
+        : \"9.0\"},\n  {\"name\": \"Kubeflow-Training\", \"version\": \"1.8\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"Python\", \"version\":\
+        \ \"v3.11\"}\n]\n"
+    from:
+      kind: DockerImage
+      name: quay.io/modh/odh-trustyai-notebook@sha256:a1b863c2787ba2bca292e381561ed1d92cf5bc25705edfb1ded5e0720a12d102
+    name: '2024.2'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/notebook-build-commit: d3137ca
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        ,\"version\": \"4.4\"},\n  {\"name\": \"TrustyAI\", \"version\": \"0.6\"},\n\
+        \  {\"name\": \"Transformers\", \"version\": \"4.55\"},\n  {\"name\": \"Datasets\"\
+        , \"version\": \"3.4\"},\n  {\"name\": \"Accelerate\", \"version\": \"1.5\"\
+        },\n  {\"name\": \"Torch\", \"version\": \"2.6\"},\n  {\"name\": \"Boto3\"\
+        , \"version\": \"1.37\"},\n  {\"name\": \"Kafka-Python-ng\", \"version\":\
+        \ \"2.2\"},\n  {\"name\": \"Kfp\", \"version\": \"2.12\"},\n  {\"name\": \"\
+        Matplotlib\", \"version\": \"3.10\"},\n  {\"name\": \"Numpy\", \"version\"\
+        : \"1.26\"},\n  {\"name\": \"Pandas\", \"version\": \"1.5\"},\n  {\"name\"\
+        : \"Scikit-learn\", \"version\": \"1.7\"},\n  {\"name\": \"Scipy\", \"version\"\
+        : \"1.15\"},\n  {\"name\": \"Odh-Elyra\", \"version\": \"4.2\"},\n  {\"name\"\
+        : \"PyMongo\", \"version\": \"4.11\"},\n  {\"name\": \"Pyodbc\", \"version\"\
+        : \"5.2\"},\n  {\"name\": \"Codeflare-SDK\", \"version\": \"0.29\"},\n  {\"\
+        name\": \"Sklearn-onnx\", \"version\": \"1.18\"},\n  {\"name\": \"Psycopg\"\
+        , \"version\": \"3.2\"},\n  {\"name\": \"MySQL Connector/Python\", \"version\"\
+        : \"9.3\"},\n  {\"name\": \"Kubeflow-Training\", \"version\": \"1.9\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"Python\", \"version\":\
+        \ \"v3.11\"}\n]\n"
+      opendatahub.io/workbench-image-recommended: 'false'
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/rhoai/odh-workbench-jupyter-trustyai-cpu-py311-rhel9@sha256:4331bd07ffb9676a3d9f387b56148e679e0bc50a05dbcc5e693df5aafb097bc0
+    name: '2025.1'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/notebook-build-commit: 06da715
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        ,\"version\": \"4.4\"},\n  {\"name\": \"TrustyAI\", \"version\": \"0.6\"},\n\
+        \  {\"name\": \"Transformers\", \"version\": \"4.56\"},\n  {\"name\": \"Datasets\"\
+        , \"version\": \"4.0\"},\n  {\"name\": \"Accelerate\", \"version\": \"1.10\"\
+        },\n  {\"name\": \"Torch\", \"version\": \"2.7\"},\n  {\"name\": \"Boto3\"\
+        , \"version\": \"1.40\"},\n  {\"name\": \"Kafka-Python-ng\", \"version\":\
+        \ \"2.2\"},\n  {\"name\": \"Kfp\", \"version\": \"2.14\"},\n  {\"name\": \"\
+        Matplotlib\", \"version\": \"3.10\"},\n  {\"name\": \"Numpy\", \"version\"\
+        : \"1.26\"},\n  {\"name\": \"Pandas\", \"version\": \"1.5\"},\n  {\"name\"\
+        : \"Scikit-learn\", \"version\": \"1.7\"},\n  {\"name\": \"Scipy\", \"version\"\
+        : \"1.16\"},\n  {\"name\": \"Odh-Elyra\", \"version\": \"4.3\"},\n  {\"name\"\
+        : \"PyMongo\", \"version\": \"4.15\"},\n  {\"name\": \"Pyodbc\", \"version\"\
+        : \"5.2\"},\n  {\"name\": \"Codeflare-SDK\", \"version\": \"0.34\"},\n  {\"\
+        name\": \"Sklearn-onnx\", \"version\": \"1.19\"},\n  {\"name\": \"Psycopg\"\
+        , \"version\": \"3.2\"},\n  {\"name\": \"MySQL Connector/Python\", \"version\"\
+        : \"9.4\"},\n  {\"name\": \"Kubeflow-Training\", \"version\": \"1.9\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"Python\", \"version\":\
+        \ \"v3.12\"}\n]\n"
+      opendatahub.io/workbench-image-recommended: 'true'
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/rhoai/odh-workbench-jupyter-trustyai-cpu-py312-rhel9@sha256:33c5f1f41404cb9b493cc69197f6faef23da54dcab2d292775fe37f6eaae6852
+    name: '2025.2'
+    referencePolicy:
+      type: Source

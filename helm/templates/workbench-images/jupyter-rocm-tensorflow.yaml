@@ -1,0 +1,103 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    opendatahub.io/notebook-image-desc: Jupyter ROCm optimized TensorFlow notebook
+      image for ODH notebooks.
+    opendatahub.io/notebook-image-name: '[3.3] Jupyter | TensorFlow | ROCm | Python
+      3.12'
+    opendatahub.io/notebook-image-order: '16'
+    opendatahub.io/notebook-image-url: https://github.com/red-hat-data-services/notebooks/blob/main/jupyter/rocm/tensorflow
+    opendatahub.io/recommended-accelerators: '["amd.com/gpu"]'
+    platform.opendatahub.io/type: OpenShift AI Self-Managed
+    platform.opendatahub.io/version: 3.3.0
+  labels:
+    app.kubernetes.io/created-by: byon
+    app.kubernetes.io/part-of: workbenches
+    app.opendatahub.io/workbenches: 'true'
+    component.opendatahub.io/name: notebooks
+    opendatahub.io/component: 'true'
+    opendatahub.io/dashboard: 'true'
+    opendatahub.io/notebook-image: 'true'
+    platform.opendatahub.io/part-of: workbenches
+  name: jupyter-rocm-tensorflow-3.3
+  namespace: redhat-ods-applications
+spec:
+  lookupPolicy:
+    local: true
+  tags:
+  - annotations:
+      opendatahub.io/image-tag-outdated: 'true'
+      opendatahub.io/notebook-build-commit: be38cca
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        ,\"version\": \"4.2\"},\n  {\"name\": \"ROCm-TensorFlow\", \"version\": \"\
+        2.14\"},\n  {\"name\": \"Tensorboard\", \"version\": \"2.14\"},\n  {\"name\"\
+        : \"Kafka-Python-ng\", \"version\": \"2.2\"},\n  {\"name\": \"Matplotlib\"\
+        , \"version\": \"3.9\"},\n  {\"name\": \"Numpy\", \"version\": \"1.26\"},\n\
+        \  {\"name\": \"Pandas\", \"version\": \"2.2\"},\n  {\"name\": \"Scikit-learn\"\
+        , \"version\": \"1.5\"},\n  {\"name\": \"Scipy\", \"version\": \"1.14\"},\n\
+        \  {\"name\": \"Odh-Elyra\", \"version\": \"4.2\"},\n  {\"name\": \"PyMongo\"\
+        , \"version\": \"4.8\"},\n  {\"name\": \"Pyodbc\", \"version\": \"5.1\"},\n\
+        \  {\"name\": \"Codeflare-SDK\", \"version\": \"0.24\"},\n  {\"name\": \"\
+        Sklearn-onnx\", \"version\": \"1.17\"},\n  {\"name\": \"Psycopg\", \"version\"\
+        : \"3.2\"},\n  {\"name\": \"MySQL Connector/Python\", \"version\": \"9.0\"\
+        }\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"Python\", \"version\":\
+        \ \"v3.11\"},\n  {\"name\": \"ROCm-TensorFlow\", \"version\": \"2.14\"}\n\
+        ]\n"
+    from:
+      kind: DockerImage
+      name: quay.io/modh/rocm-notebooks@sha256:f94702219419e651327636b390d1872c58fd7b8f9f6b16a02c958ffb918eded3
+    name: '2024.2'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/notebook-build-commit: 8e73cac
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        ,\"version\": \"4.4\"},\n  {\"name\": \"TensorFlow-ROCm\", \"version\": \"\
+        2.14\"},\n  {\"name\": \"Tensorboard\", \"version\": \"2.14\"},\n  {\"name\"\
+        : \"Kafka-Python-ng\", \"version\": \"2.2\"},\n  {\"name\": \"Matplotlib\"\
+        , \"version\": \"3.10\"},\n  {\"name\": \"Numpy\", \"version\": \"1.26\"},\n\
+        \  {\"name\": \"Pandas\", \"version\": \"2.2\"},\n  {\"name\": \"Scikit-learn\"\
+        , \"version\": \"1.6\"},\n  {\"name\": \"Scipy\", \"version\": \"1.15\"},\n\
+        \  {\"name\": \"Odh-Elyra\", \"version\": \"4.2\"},\n  {\"name\": \"PyMongo\"\
+        , \"version\": \"4.11\"},\n  {\"name\": \"Pyodbc\", \"version\": \"5.2\"},\n\
+        \  {\"name\": \"Codeflare-SDK\", \"version\": \"0.30\"},\n  {\"name\": \"\
+        Sklearn-onnx\", \"version\": \"1.17\"},\n  {\"name\": \"Psycopg\", \"version\"\
+        : \"3.2\"},\n  {\"name\": \"MySQL Connector/Python\", \"version\": \"9.3\"\
+        }\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"ROCm\", \"version\": \"\
+        v6.2\"},\n  {\"name\": \"Python\", \"version\": \"v3.11\"},\n  {\"name\":\
+        \ \"TensorFlow-ROCm\", \"version\": \"2.14\"}\n]\n"
+      opendatahub.io/workbench-image-recommended: 'false'
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/rhoai/odh-workbench-jupyter-tensorflow-rocm-py311-rhel9@sha256:4d1b945221fe7f3e7a486277f27529b9ba2b73b03b9a7e2a3382c133671fcff3
+    name: '2025.1'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/notebook-build-commit: 8e73cac
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        ,\"version\": \"4.4\"},\n  {\"name\": \"TensorFlow-ROCm\", \"version\": \"\
+        2.18\"},\n  {\"name\": \"Tensorboard\", \"version\": \"2.18\"},\n  {\"name\"\
+        : \"Kafka-Python-ng\", \"version\": \"2.2\"},\n  {\"name\": \"Matplotlib\"\
+        , \"version\": \"3.10\"},\n  {\"name\": \"Numpy\", \"version\": \"1.26\"},\n\
+        \  {\"name\": \"Pandas\", \"version\": \"2.3\"},\n  {\"name\": \"Scikit-learn\"\
+        , \"version\": \"1.7\"},\n  {\"name\": \"Scipy\", \"version\": \"1.16\"},\n\
+        \  {\"name\": \"Odh-Elyra\", \"version\": \"4.3\"},\n  {\"name\": \"PyMongo\"\
+        , \"version\": \"4.15\"},\n  {\"name\": \"Pyodbc\", \"version\": \"5.2\"},\n\
+        \  {\"name\": \"Codeflare-SDK\", \"version\": \"0.34\"},\n  {\"name\": \"\
+        Sklearn-onnx\", \"version\": \"1.19\"},\n  {\"name\": \"Psycopg\", \"version\"\
+        : \"3.2\"},\n  {\"name\": \"MySQL Connector/Python\", \"version\": \"9.4\"\
+        }\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"ROCm\", \"version\": \"\
+        v6.3\"},\n  {\"name\": \"Python\", \"version\": \"v3.12\"},\n  {\"name\":\
+        \ \"TensorFlow-ROCm\", \"version\": \"2.18\"}\n]\n"
+      opendatahub.io/workbench-image-recommended: 'true'
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/rhoai/odh-workbench-jupyter-tensorflow-rocm-py312-rhel9@sha256:8cfa6fb16d6121743f58157bdebce11e1a7e95410b732fef7b8034b70efc95a5
+    name: '2025.2'
+    referencePolicy:
+      type: Source

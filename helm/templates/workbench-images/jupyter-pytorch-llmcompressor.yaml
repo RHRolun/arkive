@@ -1,0 +1,57 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    opendatahub.io/notebook-image-desc: Jupyter notebook image with PyTorch LLM Compressor
+      libraries and dependencies to start experimenting with advanced AI/ML notebooks.
+    opendatahub.io/notebook-image-name: '[3.3] Jupyter | PyTorch LLM Compressor |
+      CUDA | Python 3.12'
+    opendatahub.io/notebook-image-order: '10'
+    opendatahub.io/notebook-image-url: https://github.com/opendatahub-io/notebooks/tree/main/jupyter/pytorch+llmcompressor/ubi9-python-3.12
+    opendatahub.io/recommended-accelerators: '["nvidia.com/gpu"]'
+    platform.opendatahub.io/type: OpenShift AI Self-Managed
+    platform.opendatahub.io/version: 3.3.0
+  labels:
+    app.kubernetes.io/created-by: byon
+    app.kubernetes.io/part-of: workbenches
+    app.opendatahub.io/workbenches: 'true'
+    component.opendatahub.io/name: notebooks
+    opendatahub.io/component: 'true'
+    opendatahub.io/dashboard: 'true'
+    opendatahub.io/notebook-image: 'true'
+    platform.opendatahub.io/part-of: workbenches
+  name: jupyter-pytorch-llmcompressor-3.3
+  namespace: redhat-ods-applications
+spec:
+  lookupPolicy:
+    local: true
+  tags:
+  - annotations:
+      opendatahub.io/notebook-build-commit: 8e73cac
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        ,\"version\": \"4.4\"},\n  {\"name\": \"PyTorch\", \"version\": \"2.7\"},\n\
+        \  {\"name\": \"LLM-Compressor\", \"version\": \"0.9\"},\n  {\"name\": \"\
+        Tensorboard\", \"version\": \"2.20\"},\n  {\"name\": \"Boto3\", \"version\"\
+        : \"1.40\"},\n  {\"name\": \"Kafka-Python-ng\", \"version\": \"2.2\"},\n \
+        \ {\"name\": \"Kfp\", \"version\": \"2.14\"},\n  {\"name\": \"Matplotlib\"\
+        , \"version\": \"3.10\"},\n  {\"name\": \"Numpy\", \"version\": \"2.3\"},\n\
+        \  {\"name\": \"Pandas\", \"version\": \"2.3\"},\n  {\"name\": \"Scikit-learn\"\
+        , \"version\": \"1.7\"},\n  {\"name\": \"Scipy\", \"version\": \"1.16\"},\n\
+        \  {\"name\": \"Odh-Elyra\", \"version\": \"4.3\"},\n  {\"name\": \"PyMongo\"\
+        , \"version\": \"4.15\"},\n  {\"name\": \"Pyodbc\", \"version\": \"5.2\"},\n\
+        \  {\"name\": \"Codeflare-SDK\", \"version\": \"0.34\"},\n  {\"name\": \"\
+        Feast\", \"version\": \"0.59\"},\n  {\"name\": \"Sklearn-onnx\", \"version\"\
+        : \"1.19\"},\n  {\"name\": \"Psycopg\", \"version\": \"3.2\"},\n  {\"name\"\
+        : \"MySQL Connector/Python\", \"version\": \"9.4\"},\n  {\"name\": \"Kubeflow-Training\"\
+        , \"version\": \"1.9\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"CUDA\", \"version\": \"\
+        12.8\"},\n  {\"name\": \"Python\", \"version\": \"v3.12\"},\n  {\"name\":\
+        \ \"PyTorch\", \"version\": \"2.7\"},\n  {\"name\": \"LLM-Compressor\", \"\
+        version\": \"0.9\"}\n]\n"
+      opendatahub.io/workbench-image-recommended: 'true'
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/rhoai/odh-workbench-jupyter-pytorch-llmcompressor-cuda-py312-rhel9@sha256:3e8f45e17ec6d8ad6150835d8566a611de83fde0a45c56ce09efa02b1074c480
+    name: '2025.2'
+    referencePolicy:
+      type: Source

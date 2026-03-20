@@ -1,0 +1,65 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    opendatahub.io/notebook-image-desc: Jupyter ROCm notebook image for ODH notebooks.
+    opendatahub.io/notebook-image-name: '[3.3] Jupyter | Minimal | ROCm | Python 3.12'
+    opendatahub.io/notebook-image-order: '5'
+    opendatahub.io/notebook-image-url: https://github.com/red-hat-data-services/notebooks/blob/main/rocm
+    opendatahub.io/recommended-accelerators: '["amd.com/gpu"]'
+    platform.opendatahub.io/type: OpenShift AI Self-Managed
+    platform.opendatahub.io/version: 3.3.0
+  labels:
+    app.kubernetes.io/created-by: byon
+    app.kubernetes.io/part-of: workbenches
+    app.opendatahub.io/workbenches: 'true'
+    component.opendatahub.io/name: notebooks
+    opendatahub.io/component: 'true'
+    opendatahub.io/dashboard: 'true'
+    opendatahub.io/notebook-image: 'true'
+    platform.opendatahub.io/part-of: workbenches
+  name: jupyter-rocm-minimal-3.3
+  namespace: redhat-ods-applications
+spec:
+  lookupPolicy:
+    local: true
+  tags:
+  - annotations:
+      opendatahub.io/image-tag-outdated: 'true'
+      opendatahub.io/notebook-build-commit: be38cca
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        , \"version\": \"4.2\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"ROCm\", \"version\": \"\
+        6.1\"},\n  {\"name\": \"Python\", \"version\": \"v3.11\"}\n]\n"
+    from:
+      kind: DockerImage
+      name: quay.io/modh/rocm-notebooks@sha256:199367d2946fc8427611b4b96071cb411433ffbb5f0988279b10150020af22db
+    name: '2024.2'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/notebook-build-commit: bff12e2
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        , \"version\": \"4.4\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"ROCm\", \"version\": \"\
+        6.2\"},\n  {\"name\": \"Python\", \"version\": \"v3.11\"}\n]\n"
+      opendatahub.io/workbench-image-recommended: 'false'
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/rhoai/odh-workbench-jupyter-minimal-rocm-py311-rhel9@sha256:4cc172aab8be2ba278a9525ef0878c68d76963beb9506c8526c07d5b90b1eb58
+    name: '2025.1'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/notebook-build-commit: bff12e2
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        , \"version\": \"4.4\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"ROCm\", \"version\": \"\
+        6.3\"},\n  {\"name\": \"Python\", \"version\": \"v3.12\"}\n]\n"
+      opendatahub.io/workbench-image-recommended: 'true'
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/rhoai/odh-workbench-jupyter-minimal-rocm-py312-rhel9@sha256:9ba87a487d36694890868b26da34e8d4421488c5c862cc7409d26ee8aa0af63d
+    name: '2025.2'
+    referencePolicy:
+      type: Source

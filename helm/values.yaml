@@ -1,0 +1,28 @@
+# Workbench images (ImageStream CRDs) - namespace: redhat-ods-applications
+workbenchImages:
+  codeServerNotebook:
+    enabled: true
+  jupyterPytorchLlmcompressor:
+    enabled: true
+  jupyterRocmMinimal:
+    enabled: true
+  jupyterRocmPytorch:
+    enabled: true
+  jupyterRocmTensorflow:
+    enabled: true
+  minimalGpu:
+    enabled: true
+  odhTrustaiNotebook:
+    enabled: true
+  pytorch:
+    enabled: true
+  s2iGenericDataScienceNotebook:
+    enabled: true
+  s2iMinimalNotebook:
+    enabled: true
+  tensorflow:
+    enabled: true
+
+# Runtime images (ClusterServingRuntime CRDs) - cluster-scoped
+# To be populated after cluster discovery
+runtimeImages: {}

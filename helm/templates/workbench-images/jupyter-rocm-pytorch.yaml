@@ -1,0 +1,102 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    opendatahub.io/notebook-image-desc: Jupyter ROCm optimized PyTorch notebook image
+      for ODH notebooks.
+    opendatahub.io/notebook-image-name: '[3.3] Jupyter | PyTorch | ROCm | Python 3.12'
+    opendatahub.io/notebook-image-order: '12'
+    opendatahub.io/notebook-image-url: https://github.com/red-hat-data-services/notebooks/blob/main/jupyter/rocm/pytorch
+    opendatahub.io/recommended-accelerators: '["amd.com/gpu"]'
+    platform.opendatahub.io/type: OpenShift AI Self-Managed
+    platform.opendatahub.io/version: 3.3.0
+  labels:
+    app.kubernetes.io/created-by: byon
+    app.kubernetes.io/part-of: workbenches
+    app.opendatahub.io/workbenches: 'true'
+    component.opendatahub.io/name: notebooks
+    opendatahub.io/component: 'true'
+    opendatahub.io/dashboard: 'true'
+    opendatahub.io/notebook-image: 'true'
+    platform.opendatahub.io/part-of: workbenches
+  name: jupyter-rocm-pytorch-3.3
+  namespace: redhat-ods-applications
+spec:
+  lookupPolicy:
+    local: true
+  tags:
+  - annotations:
+      opendatahub.io/image-tag-outdated: 'true'
+      opendatahub.io/notebook-build-commit: be38cca
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        ,\"version\": \"4.2\"},\n  {\"name\": \"ROCm-PyTorch\", \"version\": \"2.4\"\
+        },\n  {\"name\": \"Tensorboard\", \"version\": \"2.16\"},\n  {\"name\": \"\
+        Kafka-Python-ng\", \"version\": \"2.2\"},\n  {\"name\": \"Matplotlib\", \"\
+        version\": \"3.9\"},\n  {\"name\": \"Numpy\", \"version\": \"2.1\"},\n  {\"\
+        name\": \"Pandas\", \"version\": \"2.2\"},\n  {\"name\": \"Scikit-learn\"\
+        , \"version\": \"1.5\"},\n  {\"name\": \"Scipy\", \"version\": \"1.14\"},\n\
+        \  {\"name\": \"Odh-Elyra\", \"version\": \"4.2\"},\n  {\"name\": \"PyMongo\"\
+        , \"version\": \"4.8\"},\n  {\"name\": \"Pyodbc\", \"version\": \"5.1\"},\n\
+        \  {\"name\": \"Codeflare-SDK\", \"version\": \"0.26\"},\n  {\"name\": \"\
+        Sklearn-onnx\", \"version\": \"1.17\"},\n  {\"name\": \"Psycopg\", \"version\"\
+        : \"3.2\"},\n  {\"name\": \"MySQL Connector/Python\", \"version\": \"9.0\"\
+        },\n  {\"name\": \"Kubeflow-Training\", \"version\": \"1.8\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"Python\", \"version\":\
+        \ \"v3.11\"},\n  {\"name\": \"ROCm-PyTorch\", \"version\": \"2.4\"}\n]\n"
+    from:
+      kind: DockerImage
+      name: quay.io/modh/rocm-notebooks@sha256:1f0b19b7ae587d638e78697c67f1290d044e48bfecccfb72d7a16faeba13f980
+    name: '2024.2'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/notebook-build-commit: 8e73cac
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        ,\"version\": \"4.4\"},\n  {\"name\": \"ROCm-PyTorch\", \"version\": \"2.6\"\
+        },\n  {\"name\": \"Tensorboard\", \"version\": \"2.18\"},\n  {\"name\": \"\
+        Kafka-Python-ng\", \"version\": \"2.2\"},\n  {\"name\": \"Matplotlib\", \"\
+        version\": \"3.10\"},\n  {\"name\": \"Numpy\", \"version\": \"2.2\"},\n  {\"\
+        name\": \"Pandas\", \"version\": \"2.2\"},\n  {\"name\": \"Scikit-learn\"\
+        , \"version\": \"1.6\"},\n  {\"name\": \"Scipy\", \"version\": \"1.15\"},\n\
+        \  {\"name\": \"Odh-Elyra\", \"version\": \"4.2\"},\n  {\"name\": \"PyMongo\"\
+        , \"version\": \"4.11\"},\n  {\"name\": \"Pyodbc\", \"version\": \"5.2\"},\n\
+        \  {\"name\": \"Codeflare-SDK\", \"version\": \"0.30\"},\n  {\"name\": \"\
+        Sklearn-onnx\", \"version\": \"1.18\"},\n  {\"name\": \"Psycopg\", \"version\"\
+        : \"3.2\"},\n  {\"name\": \"MySQL Connector/Python\", \"version\": \"9.3\"\
+        },\n  {\"name\": \"Kubeflow-Training\", \"version\": \"1.9\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"ROCm\", \"version\": \"\
+        v6.2\"},\n  {\"name\": \"Python\", \"version\": \"v3.11\"},\n  {\"name\":\
+        \ \"ROCm-PyTorch\", \"version\": \"2.6\"}\n]\n"
+      opendatahub.io/workbench-image-recommended: 'false'
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/rhoai/odh-workbench-jupyter-pytorch-rocm-py311-rhel9@sha256:8270d5c58389d0f7ed086336c730060c3792453a4ddc08f0bc622677edd3e0fd
+    name: '2025.1'
+    referencePolicy:
+      type: Source
+  - annotations:
+      opendatahub.io/notebook-build-commit: d3137ca
+      opendatahub.io/notebook-python-dependencies: "[\n  {\"name\": \"JupyterLab\"\
+        ,\"version\": \"4.4\"},\n  {\"name\": \"ROCm-PyTorch\", \"version\": \"2.7\"\
+        },\n  {\"name\": \"Tensorboard\", \"version\": \"2.20\"},\n  {\"name\": \"\
+        Kafka-Python-ng\", \"version\": \"2.2\"},\n  {\"name\": \"Matplotlib\", \"\
+        version\": \"3.10\"},\n  {\"name\": \"Numpy\", \"version\": \"2.3\"},\n  {\"\
+        name\": \"Pandas\", \"version\": \"2.3\"},\n  {\"name\": \"Scikit-learn\"\
+        , \"version\": \"1.7\"},\n  {\"name\": \"Scipy\", \"version\": \"1.16\"},\n\
+        \  {\"name\": \"Odh-Elyra\", \"version\": \"4.3\"},\n  {\"name\": \"PyMongo\"\
+        , \"version\": \"4.15\"},\n  {\"name\": \"Pyodbc\", \"version\": \"5.2\"},\n\
+        \  {\"name\": \"Codeflare-SDK\", \"version\": \"0.34\"},\n  {\"name\": \"\
+        Feast\", \"version\": \"0.59\"},\n  {\"name\": \"Sklearn-onnx\", \"version\"\
+        : \"1.19\"},\n  {\"name\": \"Psycopg\", \"version\": \"3.2\"},\n  {\"name\"\
+        : \"MySQL Connector/Python\", \"version\": \"9.4\"},\n  {\"name\": \"Kubeflow-Training\"\
+        , \"version\": \"1.9\"}\n]\n"
+      opendatahub.io/notebook-software: "[\n  {\"name\": \"ROCm\", \"version\": \"\
+        v6.3\"},\n  {\"name\": \"Python\", \"version\": \"v3.12\"},\n  {\"name\":\
+        \ \"ROCm-PyTorch\", \"version\": \"2.7\"}\n]\n"
+      opendatahub.io/workbench-image-recommended: 'true'
+    from:
+      kind: DockerImage
+      name: registry.redhat.io/rhoai/odh-workbench-jupyter-pytorch-rocm-py312-rhel9@sha256:f25e91832ff82afd84c67440317525c9169c62a0e6789032ac4f8ddb4995afac
+    name: '2025.2'
+    referencePolicy:
+      type: Source

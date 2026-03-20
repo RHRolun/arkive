@@ -1,0 +1,6 @@
+apiVersion: v2
+name: arkive
+description: Backup of Red Hat OpenShift AI 3.3 OOTB workbench and runtime images
+type: application
+version: 0.1.0
+appVersion: "3.3"
